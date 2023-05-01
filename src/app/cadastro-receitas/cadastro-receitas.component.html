@@ -1,0 +1,30 @@
+<div class="flex-center">
+  <mat-card>
+    <mat-card-title>Cadastro de Receita</mat-card-title>
+  <mat-card-content>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Produto</mat-label>
+      <input matInput formControlName="produto">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Quantidade</mat-label>
+      <input  matInput formControlName="quantidade">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Descricao</mat-label>
+      <input matInput formControlName="descricao">
+    </mat-form-field>
+    <div class="card-button">
+      <div class="button">
+        <button type="submit" mat-button (click)="cadastrar()">Cadastrar receita</button>
+      </div>
+    </div>
+  </form>
+  </mat-card-content>
+  </mat-card>
+</div>
