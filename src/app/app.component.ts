@@ -21,6 +21,28 @@ export class AppComponent {
       }
   });
   }
+
+  ngOnInit(): void {
+  }
+
+  irParaCadastroReceita(){
+    this.router.navigate(['/cadastro-receita']);
+  }
+  irParaCadastroProduto(){
+    this.router.navigate(['/cadastro-produto']);
+  }
+  irParaAlterarDados(){
+    this.router.navigate(['/alterar-dados']);
+  }
+  irParaHome(){
+    this.router.navigate(['/home']);
+  }
+  irParaLogin(){
+    this.router.navigate(['']);
+  }
+
+
+
 }
 
 

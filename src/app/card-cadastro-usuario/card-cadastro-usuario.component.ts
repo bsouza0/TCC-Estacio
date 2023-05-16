@@ -31,7 +31,8 @@ export class CardCadastroUsuarioComponent implements OnInit {
 
   cadastrar(){
     if(this.form.valid){
-      this.router.navigate(['/home']);
+      this.router.navigate(['']);
+      this._snackBar.open('Usuário cadastrado', 'Ok');
     }
     else if(this.form.get('nome')?.invalid){
       this._snackBar.open('Nome é obrigatório', 'Ok');
@@ -45,5 +46,9 @@ export class CardCadastroUsuarioComponent implements OnInit {
     else if( this.form.get('senha')?.invalid){
       this._snackBar.open('A Senha deve possuir no mínimo 8 dígitos', 'Ok');
     }
+  }
+
+  cancelar(){
+    this.router.navigate(['']);
   }
 }

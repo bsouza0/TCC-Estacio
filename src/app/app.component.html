@@ -1,5 +1,21 @@
 
   <mat-toolbar style="justify-content: center;" color="primary" *ngIf="!this.isLoginOrCadastro">
+    <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" type="submit" mat-button (click)="irParaHome()">
+      <mat-icon>home</mat-icon>
+    </button>
     <span class="font">Bolos do João</span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <div class="button">
+        <button type="submit" mat-button (click)="irParaAlterarDados()"> Alterar dados</button>
+      </div>
+      <div class="button">
+        <button type="submit" mat-button (click)="irParaLogin()">Sair</button>
+      </div>
+    </mat-menu>
 </mat-toolbar>
+
+
   <router-outlet></router-outlet>

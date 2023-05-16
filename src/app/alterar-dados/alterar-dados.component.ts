@@ -45,4 +45,9 @@ export class AlterarDadosComponent implements OnInit {
       this._snackBar.open('A Senha deve possuir no mínimo 8 dígitos', 'Ok');
     }
   }
+
+  cancelar(){
+    this.router.navigate(['/home']);
+  }
+
 }

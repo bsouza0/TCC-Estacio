@@ -13,6 +13,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { CardLoginComponent } from './card-login/card-login.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,7 +26,7 @@ import { CadastroProdutosComponent } from './cadastro-produtos/cadastro-produtos
 import { CadastroReceitasComponent } from './cadastro-receitas/cadastro-receitas.component';
 import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import { AlterarDadosComponent } from './alterar-dados/alterar-dados.component';
-import {MatListModule} from '@angular/material/list';
+
 
 
 @NgModule({
@@ -51,7 +53,8 @@ import {MatListModule} from '@angular/material/list';
     MatDatepickerModule,
     MatNativeDateModule,
     AppRoutingModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule
   ],
   providers: [ MatDatepickerModule ,
     {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}],

@@ -32,5 +32,11 @@ export class HomeComponent implements OnInit {
   irParaAlterarDados(){
     this.router.navigate(['/alterar-dados']);
   }
+  irParaHome(){
+    this.router.navigate(['/home']);
+  }
+  irParaLogin(){
+    this.router.navigate(['']);
+  }
 
 }

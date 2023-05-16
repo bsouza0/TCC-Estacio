@@ -17,6 +17,7 @@ export class CadastroProdutosComponent implements OnInit {
     preco: new FormControl('', [Validators.required, Validators.pattern(/^[1-9][0-9]*$/)])
   });
   constructor(
+    private router: Router,
     private _snackBar: MatSnackBar
   ) { }
 
@@ -54,6 +55,10 @@ export class CadastroProdutosComponent implements OnInit {
     else if( this.form.get('preco')?.invalid){
       this._snackBar.open('O preco é obrigatório e não pode ser negativo', 'Ok');
     }
+  }
+
+  cancelar(){
+    this.router.navigate(['/home']);
   }
 
 

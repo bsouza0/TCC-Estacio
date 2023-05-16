@@ -1,15 +1,10 @@
-<div class="card-button">
-  <div class="button">
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Lista de funções</mat-card-title>
+    <mat-card-subtitle>Escolha o que você deseja fazer</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions>
     <button type="submit" mat-button (click)="irParaCadastroProduto()">Cadastro de produto</button>
-  </div>
-</div>
-<div class="card-button">
-  <div class="button">
     <button type="submit" mat-button (click)="irParaCadastroReceita()">Cadastro de receita</button>
-  </div>
-</div>
-<div class="card-button">
-  <div class="button">
-    <button type="submit" mat-button (click)="irParaAlterarDados()">Alterar dados</button>
-  </div>
-</div>
+  </mat-card-actions>
+</mat-card>

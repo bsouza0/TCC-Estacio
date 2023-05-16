@@ -53,4 +53,7 @@ export class CadastroReceitasComponent implements OnInit {
     }
   }
 
+  cancelar(){
+    this.router.navigate(['/home']);
+  }
 }
