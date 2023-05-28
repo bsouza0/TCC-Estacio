@@ -32,6 +32,7 @@ export class CadastroProdutosComponent implements OnInit {
   cadastrar(){
     if(this.form.valid){
       this._snackBar.open('Cadastro de produto realizado com sucesso', 'Ok');
+      this.router.navigate(['/home']);
       /*this.form = new FormGroup({
         nome: new FormControl('', Validators.required),
         quantidade: new FormControl('', [Validators.required, Validators.pattern(/^[1-9][0-9]*$/)]),

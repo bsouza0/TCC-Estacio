@@ -1,10 +1,130 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>Lista de funções</mat-card-title>
-    <mat-card-subtitle>Escolha o que você deseja fazer</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-actions>
-    <button type="submit" mat-button (click)="irParaCadastroProduto()">Cadastro de produto</button>
-    <button type="submit" mat-button (click)="irParaCadastroReceita()">Cadastro de receita</button>
-  </mat-card-actions>
-</mat-card>
+
+<div style="padding: 20px;">
+  <mat-tab-group>
+    <mat-tab label="Lista de Produtos">
+      <div>
+        <table mat-table [dataSource]="produtos" class="mat-elevation-z8">
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="codigo">
+            <th mat-header-cell *matHeaderCellDef> Código </th>
+            <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef> Nome </th>
+            <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="quantidade">
+            <th mat-header-cell *matHeaderCellDef> Quantidade </th>
+            <td mat-cell *matCellDef="let element"> {{element.quantidade}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="vencimento">
+            <th mat-header-cell *matHeaderCellDef> Vencimento </th>
+            <td mat-cell *matCellDef="let element"> {{element.vencimento}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="preco">
+            <th mat-header-cell *matHeaderCellDef> Preco </th>
+            <td mat-cell *matCellDef="let element"> {{element.preco}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="colunasProduto"></tr>
+          <tr mat-row *matRowDef="let row; columns: colunasProduto;"></tr>
+        </table>
+      </div>
+      <div style="display: flex; flex-direction: row-reverse; margin-top: 10px;">
+        <button type="submit" color="primary" mat-raised-button (click)="irParaCadastroProduto()">Adicionar produto</button>
+        <button style="margin:0 10px" type="submit" color="primary" mat-raised-button (click)="irParaAlterarProdutos()">Alterar produto</button>
+      </div>
+
+    </mat-tab>
+    <mat-tab label="Lista de Receitas">
+      <div>
+        <table mat-table [dataSource]="produtos" class="mat-elevation-z8">
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="codigo">
+            <th mat-header-cell *matHeaderCellDef> Código </th>
+            <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef> Nome </th>
+            <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="produto">
+            <th mat-header-cell *matHeaderCellDef> Produto </th>
+            <td mat-cell *matCellDef="let element"> {{element.produto}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="quantidade">
+            <th mat-header-cell *matHeaderCellDef> Quantidade </th>
+            <td mat-cell *matCellDef="let element"> {{element.quantidade}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="preco">
+            <th mat-header-cell *matHeaderCellDef> Preco </th>
+            <td mat-cell *matCellDef="let element"> {{element.preco}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="colunasReceita"></tr>
+          <tr mat-row *matRowDef="let row; columns: colunasReceita;"></tr>
+        </table>
+      </div>
+      <div style="display: flex; flex-direction: row-reverse; margin-top: 10px;">
+        <button type="submit" color="primary" mat-raised-button (click)="irParaCadastroReceita()">Adicionar receita</button>
+        <button style="margin:0 10px" type="submit" color="primary" mat-raised-button (click)="irParaAlterarReceitas()">Alterar receita</button>
+      </div>
+    </mat-tab>
+    <mat-tab label="Relatorio de vendas">
+      <div>
+        <table mat-table [dataSource]="produtos" class="mat-elevation-z8">
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="codigo">
+            <th mat-header-cell *matHeaderCellDef> Código </th>
+            <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef> Produto vendido </th>
+            <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="quantidade">
+            <th mat-header-cell *matHeaderCellDef> Quantidade </th>
+            <td mat-cell *matCellDef="let element"> {{element.quantidade}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="preco">
+            <th mat-header-cell *matHeaderCellDef> Preco </th>
+            <td mat-cell *matCellDef="let element"> {{element.preco}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="data">
+            <th mat-header-cell *matHeaderCellDef> Data </th>
+            <td mat-cell *matCellDef="let element"> {{element.data}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="colunasRelatorioVendas"></tr>
+          <tr mat-row *matRowDef="let row; columns: colunasRelatorioVendas;"></tr>
+        </table>
+      </div>
+     </mat-tab>
+  </mat-tab-group>
+
+
+</div>

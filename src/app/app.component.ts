@@ -40,7 +40,12 @@ export class AppComponent {
   irParaLogin(){
     this.router.navigate(['']);
   }
-
+  irParaAlterarProdutos(){
+    this.router.navigate(['/alterar-produtos']);
+  }
+  irParaAlterarReceitas(){
+    this.router.navigate(['/alterar-receitas']);
+  }
 
 
 }

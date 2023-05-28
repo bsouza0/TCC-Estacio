@@ -4,11 +4,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-cadastro-receitas',
-  templateUrl: './cadastro-receitas.component.html',
-  styleUrls: ['./cadastro-receitas.component.css']
+  selector: 'app-alterar-receitas',
+  templateUrl: './alterar-receitas.component.html',
+  styleUrls: ['./alterar-receitas.component.css']
 })
-export class CadastroReceitasComponent implements OnInit {
+export class AlterarReceitasComponent implements OnInit {
   form: FormGroup = new FormGroup({
     nome: new FormControl('', Validators.required),
     produto: new FormControl('', Validators.required),
@@ -29,9 +29,9 @@ export class CadastroReceitasComponent implements OnInit {
     }
   }
 
-  cadastrar(){
+  alterar(){
     if(this.form.valid){
-      this._snackBar.open('Cadastro de receita realizado com sucesso', 'Ok');
+      this._snackBar.open('Informações alteradas com sucesso', 'Ok');
       this.router.navigate(['/home']);
       /*this.form = new FormGroup({
         nome: new FormControl('', Validators.required),
@@ -62,3 +62,4 @@ export class CadastroReceitasComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 }
+

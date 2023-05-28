@@ -15,6 +15,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
+
 
 import { CardLoginComponent } from './card-login/card-login.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -26,7 +29,8 @@ import { CadastroProdutosComponent } from './cadastro-produtos/cadastro-produtos
 import { CadastroReceitasComponent } from './cadastro-receitas/cadastro-receitas.component';
 import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import { AlterarDadosComponent } from './alterar-dados/alterar-dados.component';
-
+import { AlterarProdutosComponent } from './alterar-produtos/alterar-produtos.component';
+import { AlterarReceitasComponent } from './alterar-receitas/alterar-receitas.component';
 
 
 @NgModule({
@@ -37,7 +41,9 @@ import { AlterarDadosComponent } from './alterar-dados/alterar-dados.component';
     HomeComponent,
     CadastroProdutosComponent,
     CadastroReceitasComponent,
-    AlterarDadosComponent
+    AlterarDadosComponent,
+    AlterarProdutosComponent,
+    AlterarReceitasComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -54,7 +60,9 @@ import { AlterarDadosComponent } from './alterar-dados/alterar-dados.component';
     MatNativeDateModule,
     AppRoutingModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule,
+    MatTabsModule
   ],
   providers: [ MatDatepickerModule ,
     {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}],

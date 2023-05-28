@@ -4,17 +4,17 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-cadastro-receitas',
-  templateUrl: './cadastro-receitas.component.html',
-  styleUrls: ['./cadastro-receitas.component.css']
+  selector: 'app-alterar-produtos',
+  templateUrl: './alterar-produtos.component.html',
+  styleUrls: ['./alterar-produtos.component.css']
 })
-export class CadastroReceitasComponent implements OnInit {
+export class AlterarProdutosComponent implements OnInit {
+
   form: FormGroup = new FormGroup({
     nome: new FormControl('', Validators.required),
-    produto: new FormControl('', Validators.required),
     quantidade: new FormControl('', [Validators.required, Validators.pattern(/^[1-9][0-9]*$/)]),
-    preco: new FormControl('', [Validators.required, Validators.pattern(/^[1-9][0-9]*$/)]),
-    descricao: new FormControl('')
+    vencimento: new FormControl('', Validators.required),
+    preco: new FormControl('', [Validators.required, Validators.pattern(/^[1-9][0-9]*$/)])
   });
   constructor(
     private router: Router,
@@ -29,9 +29,9 @@ export class CadastroReceitasComponent implements OnInit {
     }
   }
 
-  cadastrar(){
+  alterar(){
     if(this.form.valid){
-      this._snackBar.open('Cadastro de receita realizado com sucesso', 'Ok');
+      this._snackBar.open('Informações alteradas com sucesso', 'Ok');
       this.router.navigate(['/home']);
       /*this.form = new FormGroup({
         nome: new FormControl('', Validators.required),
@@ -47,14 +47,14 @@ export class CadastroReceitasComponent implements OnInit {
     else if(this.form.get('nome')?.invalid){
       this._snackBar.open('Nome é obrigatório', 'Ok');
     }
-    else if( this.form.get('produto')?.invalid){
-      this._snackBar.open('Produto é obrigatório', 'Ok');
-    }
     else if(this.form.get('quantidade')?.invalid){
       this._snackBar.open('Quantidade é obrigatório e não pode ser negativo', 'Ok');
     }
-    else if(this.form.get('preco')?.invalid){
-      this._snackBar.open('Preço é obrigatório e não pode ser negativo', 'Ok');
+    else if( this.form.get('vencimento')?.invalid){
+      this._snackBar.open('Data de vencimento é obrigatório', 'Ok');
+    }
+    else if( this.form.get('preco')?.invalid){
+      this._snackBar.open('O preco é obrigatório e não pode ser negativo', 'Ok');
     }
   }
 

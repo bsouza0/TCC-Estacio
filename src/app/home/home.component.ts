@@ -10,12 +10,23 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  public colunasProduto = ['id', 'codigo', 'nome', 'quantidade', 'vencimento'];
+  public produtos: any
+
+  public colunasReceita = ['id', 'codigo', 'nome', 'produto', 'quantidade', 'preco'];
+  public receita: any
+
+  public colunasRelatorioVendas = ['id', 'codigo', 'nome', 'quantidade', 'preco', 'data' ];
+  public relatorioVendas: any
+
   form: FormGroup = new FormGroup({
     nome: new FormControl('', Validators.required),
     cpf: new FormControl('', [Validators.required, Validators.pattern(/^[0-9.-]*$/), Validators.maxLength(14), Validators.minLength(14)]),
     email: new FormControl('', Validators.required),
     senha: new FormControl('', [Validators.required, Validators.minLength(9)])
   });
+
+
   constructor(
     private router: Router
   ) { }
@@ -37,6 +48,12 @@ export class HomeComponent implements OnInit {
   }
   irParaLogin(){
     this.router.navigate(['']);
+  }
+  irParaAlterarProdutos(){
+    this.router.navigate(['/alterar-produtos']);
+  }
+  irParaAlterarReceitas(){
+    this.router.navigate(['/alterar-receitas']);
   }
 
 }
